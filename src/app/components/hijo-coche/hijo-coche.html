@@ -1,0 +1,32 @@
+<div class="card text-center p-4 border-2 border-gray-300 rounded-xl shadow-md bg-white max-w-sm mx-auto">
+  <h3 class="text-xl font-bold mb-2">{{ coche.marca }} {{ coche.modelo }}</h3>
+
+  <img
+    [src]="coche.imagen"
+    [alt]="coche.marca + ' ' + coche.modelo"
+    class="w-full h-48 object-cover rounded-lg mb-3"
+  />
+
+  <p class="text-gray-700">🚀 Velocidad: {{ coche.velocidad }} km/h</p>
+  <p class="text-gray-700 mb-4">
+    ⚡ Estado:
+    <span [ngClass]="coche.estado ? 'text-green-600' : 'text-red-600'">
+      {{ coche.estado ? 'Encendido' : 'Apagado' }}
+    </span>
+  </p>
+
+  <div class="flex justify-center flex-wrap gap-2">
+    <button (click)="arrancar()" class="px-3 py-1 bg-green-500 text-white rounded-lg hover:bg-green-600">
+      Arrancar
+    </button>
+    <button (click)="apagar()" class="px-3 py-1 bg-red-500 text-white rounded-lg hover:bg-red-600">
+      Apagar
+    </button>
+    <button (click)="acelerar()" class="px-3 py-1 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+      Acelerar
+    </button>
+    <button (click)="frenar()" class="px-3 py-1 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">
+      Frenar
+    </button>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="p-6 bg-gradient-to-b from-gray-50 to-gray-100 min-h-screen">
+  <h1
+    class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-purple-500 to-red-500 mb-8 text-center"
+  >
+    Detalles Productos:
+  </h1>
+
+  <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    @for (p of productos; track p) {
+    <div
+      class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-1 p-4 text-center"
+    >
+      <img
+        [src]="p.imagen"
+        alt="{{ p.nombre }}"
+        class="w-32 h-32 object-cover mx-auto rounded-full mb-4"
+      />
+      <h3 class="text-xl font-semibold text-gray-800">{{ p.nombre }}</h3>
+      <p class="text-lg text-gray-600 mt-2 font-medium">
+        {{ p.precio | currency : 'USD' : 'symbol' : '1.0-0' }}
+      </p>
+    </div>
+    }
+  </div>
+</div>
