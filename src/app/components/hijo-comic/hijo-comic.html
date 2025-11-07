@@ -1,0 +1,30 @@
+<div
+  class="bg-cyan-100 border border-cyan-300 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 max-w-sm mx-auto text-center"
+>
+  <h2 class="text-2xl font-bold text-lime-600 mb-2">
+    {{ comic.titulo }}
+  </h2>
+
+  <h3 class="text-orange-500 font-medium mb-4">
+    {{ comic.descripcion }}
+  </h3>
+
+  <img
+    src={{comic.imagen}} class="w-40 h-56 object-cover rounded-xl mx-auto mb-4 shadow"
+  />
+  <div class="flex justify-center gap-4">
+    <button
+      (click)="marcarFavorito()"
+      class="px-4 py-2 rounded-lg bg-lime-500 hover:bg-lime-600 text-white font-semibold transition"
+    >
+      ⭐ Favorito
+    </button>
+
+    <button
+      (click)="eliminarComic()"
+      class="px-4 py-2 rounded-lg bg-red-500 hover:bg-red-600 text-white font-semibold transition"
+    >
+      🗑️ Delete
+    </button>
+  </div>
+</div>
